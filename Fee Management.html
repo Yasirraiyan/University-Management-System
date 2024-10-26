@@ -1,0 +1,28 @@
+   <div className="fee-management">
+      <h2>Fee Management</h2>
+      <form onSubmit={handleAddTransaction}>
+        <label>Student Name:</label>
+        <input 
+          type="text" 
+          value={studentName} 
+          onChange={(e) => setStudentName(e.target.value)} 
+          placeholder="Enter student name" 
+        />
+        <br />
+        <label>Amount:</label>
+        <input 
+          type="number" 
+          value={amount} 
+          onChange={(e) => setAmount(e.target.value)} 
+          placeholder="Enter amount" 
+        />
+        <br />
+        <button type="submit">Add Transaction</button>
+      </form>
+      <h3>Transactions</h3>
+      <ul>
+        {transactions.map((transaction, index) => (
+          <li key={index}>{transaction.studentName} - ${transaction.amount.toFixed(2)}</li>
+        ))}
+      </ul>
+    </div>
